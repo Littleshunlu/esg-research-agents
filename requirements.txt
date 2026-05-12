@@ -1,0 +1,15 @@
+# 项目依赖
+pandas>=2.0.0
+numpy>=1.24.0
+aiohttp>=3.9.0
+requests>=2.31.0
+pyyaml>=6.0
+openpyxl>=3.1.0
+
+# 计量经济学
+statsmodels>=0.14.0
+linearmodels>=5.3
+
+# 测试
+pytest>=7.4.0
+pytest-asyncio>=0.21.0

@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# 虚拟环境
+venv/
+.venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 数据文件（敏感数据不上传）
+data/*.csv
+data/*.xlsx
+data/*.dta
+!data/.gitkeep
+
+# 输出文件
+output/
+
+# 配置（含API Key）
+config/local.yaml
+config/local.yml
+
+# 环境变量
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 测试
+.pytest_cache/
+.coverage
+htmlcov/

@@ -1,0 +1,63 @@
+# ESG Research Agents 配置文件
+
+# LLM API配置
+llm:
+  # 默认使用DeepSeek
+  default:
+    api_base: "https://api.deepseek.com/v1"
+    model: "deepseek-chat"
+    api_key: ""  # 请填入你的API Key
+    temperature: 0.3
+    max_tokens: 4096
+
+  # 混元模型（备选）
+  hunyuan:
+    api_base: "https://api.hunyuan.cloud.tencent.com/v1"
+    model: "hunyuan-lite"
+    api_key: ""
+    temperature: 0.3
+    max_tokens: 4096
+
+  # Mimo模型（备选）
+  mimo:
+    api_base: "https://api.mimo.com/v1"
+    model: "mimo-chat"
+    api_key: ""
+    temperature: 0.3
+    max_tokens: 4096
+
+# Agent配置
+agents:
+  literature:
+    enabled: true
+    max_papers: 50  # 最大解析论文数
+
+  data_cleaning:
+    enabled: true
+    default_winsorize: 0.01  # 默认缩尾比例
+    default_missing_method: "listwise"  # 默认缺失值处理方法
+
+  empirical:
+    enabled: true
+    significance_levels:
+      - 0.01  # ***
+      - 0.05  # **
+      - 0.1   # *
+
+# 编排器配置
+orchestrator:
+  mode: "pipeline"  # pipeline 或 step
+  auto_dispatch: true  # 是否自动路由
+
+# 数据配置
+data:
+  entity_col: "stock_code"  # 个体标识列
+  time_col: "year"  # 时间标识列
+  dependent_var: "ESG_disclosure"  # 被解释变量
+  core_independent_var: "digital_tech"  # 核心解释变量
+
+# 输出配置
+output:
+  dir: "./output"
+  format: ["csv", "xlsx"]  # 支持的导出格式
+  include_timestamp: true
